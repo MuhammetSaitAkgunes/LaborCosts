@@ -11,6 +11,11 @@ namespace Entities.Concrete
         public int ProjectId { get; set; }
         public int PersonelId { get; set; }
         public int ShiftId { get; set; }
+        public int JobId { get; set; }
         public int Hours { get; set; }
+        public int Day { get; set; }
+        public int Month { get; set; }
+        public int Year { get; set; }
+        public int? DowntimeId { get; set; }
     }
 }

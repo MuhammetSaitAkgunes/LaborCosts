@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Job : IEntity
+    public class Downtime : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

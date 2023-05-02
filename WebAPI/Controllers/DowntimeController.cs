@@ -7,30 +7,30 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class JobController : ControllerBase
+    public class DowntimeController : ControllerBase
     {
-        private IJobService _jobService;
+        private IDowntimeService _downtimeService;
 
-        public JobController(IJobService jobService)
+        public DowntimeController(IDowntimeService downtimeService)
         {
-            _jobService = jobService;
+            _downtimeService = downtimeService;
         }
 
-        [HttpGet("getAllJobs")]
+        [HttpGet("getAllDowntimes")]
         public IActionResult GetList()
         {
-            var result = _jobService.GetList();
-            if (result.IsSuccess)
-            {
+            var result = _downtimeService.GetList();
+            if(result.IsSuccess) 
+            { 
                 return Ok(result.Data);
             }
             return BadRequest(result.Message);
         }
 
-        [HttpPost("addJob")]
-        public IActionResult Add(Job job)
+        [HttpPost("addDowntime")]
+        public IActionResult Add(Downtime downtime)
         {
-            var result = _jobService.Add(job);
+            var result = _downtimeService.Add(downtime);
             if (result.IsSuccess)
             {
                 return Ok(result.Message);
@@ -38,10 +38,10 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpPost("updateJob")]
-        public IActionResult Update(Job job)
+        [HttpPost("updateDowntime")]
+        public IActionResult Update(Downtime downtime)
         {
-            var result = _jobService.Delete(job);
+            var result = _downtimeService.Update(downtime);
             if (result.IsSuccess)
             {
                 return Ok(result.Message);
@@ -49,11 +49,11 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpPost("deleteJob")]
-        public IActionResult Delete(Job job)
+        [HttpPost("deleteDowntime")]
+        public IActionResult Delete(Downtime downtime)
         {
-            var result = _jobService.Delete(job);
-            if (result.IsSuccess)
+            var result = _downtimeService.Delete(downtime);
+            if(result.IsSuccess)
             {
                 return Ok(result.Message);
             }

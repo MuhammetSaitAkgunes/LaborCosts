@@ -18,5 +18,6 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Project> Projects { get; set; }
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<WorkingHour> WorkingHours { get; set; }
+        public DbSet<Downtime> Downtimes { get; set; }
     }
 }

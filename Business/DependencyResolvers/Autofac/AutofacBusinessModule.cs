@@ -27,6 +27,9 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<WorkingHourManager>().As<IWorkingHourService>();
             builder.RegisterType<EfWorkingHourDal>().As<IWorkingHourDal>();
+
+            builder.RegisterType<DowntimeManager>().As<IDowntimeService>();
+            builder.RegisterType<EfDowntimeDal>().As<IDowntimeDal>();
         }
     }
 }

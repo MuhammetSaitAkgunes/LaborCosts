@@ -8,8 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfWorkingHourDal : EfEntityRepositoryBase<WorkingHour, BolgemPlusContext>, IWorkingHourDal
+    public class EfDowntimeDal : EfEntityRepositoryBase<Downtime, BolgemPlusContext>, IDowntimeDal
     {
     }
 }
-
